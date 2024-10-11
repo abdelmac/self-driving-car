@@ -26,7 +26,7 @@ class Controls {
                     break;
             }
             console.table(this);
-            console.log(+1)
+            console.log("CA MARCHE!!!!")
         }
 
         document.onkeyup = (event) => {
