@@ -39,7 +39,7 @@
             A.y = mouse.y - Math.sin(angle)*radius;
             B.x = mouse.x - Math.cos(angle)*radius;
             B.y = mouse.y + Math.sin(angle)*radius;
-            angle+=0.05;
+            angle+=1.5;
             ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
             ctx.beginPath();
             ctx.moveTo(A.x, A.y);
