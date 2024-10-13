@@ -29,12 +29,8 @@ class Visualizer{
                 top
             );
             ctx.lineWidth=2;
-            const value=weights[i][j];
-            const alpha=Math.abs(value);
-            const R=value<0?0:255;
-            const G=R;
-            const B=value>0?0:255;
-            ctx.strokeStyle="rgba("+R+","+G+","+B+","+alpha+")";
+            
+            ctx.strokeStyle=getRGBA(weights[i][j]);
             ctx.stroke();
             }
 
@@ -64,7 +60,7 @@ class Visualizer{
             ctx.beginPath();
             ctx.lineWidth=2;
             ctx.arc(x,top,nodeRadius,0,Math.PI*2);
-            ctx.strokeStyle=
+            ctx.strokeStyle=getRGBA(biases[i]);
             ctx.stroke();
         }
 
