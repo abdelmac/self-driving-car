@@ -3,19 +3,18 @@ class Road{
         this.x=x;
         this.width=width;
         this.laneCount=laneCount;
+
         this.left=x-width/2;
         this.right=x+width/2;
 
         const infinity=1000000;
         this.top=-infinity;
-        this.bottom=+infinity;
+        this.bottom=infinity;
 
         const topLeft={x:this.left,y:this.top};
         const topRight={x:this.right,y:this.top};
         const bottomLeft={x:this.left,y:this.bottom};
         const bottomRight={x:this.right,y:this.bottom};
-
-
         this.borders=[
             [topLeft,bottomLeft],
             [topRight,bottomRight]
@@ -25,7 +24,7 @@ class Road{
     getLaneCenter(laneIndex){
         const laneWidth=this.width/this.laneCount;
         return this.left+laneWidth/2+
-        Math.min(laneIndex,this.laneCount-1)*laneWidth;
+            Math.min(laneIndex,this.laneCount-1)*laneWidth;
     }
 
     draw(ctx){
@@ -38,7 +37,6 @@ class Road{
                 this.right,
                 i/this.laneCount
             );
-            
             
             ctx.setLineDash([20,20]);
             ctx.beginPath();
@@ -53,17 +51,6 @@ class Road{
             ctx.moveTo(border[0].x,border[0].y);
             ctx.lineTo(border[1].x,border[1].y);
             ctx.stroke();
-
-        }
-        );
-        
+        });
     }
-
-    
-
-}
-
-
-function lerp(A,B,t){
-    return A+(B-A)*t;
 }
