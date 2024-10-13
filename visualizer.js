@@ -43,7 +43,7 @@ class Visualizer{
 
             
             ctx.beginPath();
-            ctx.arc(x,bottom,nodeRadius,0,Math.PI*2);
+            ctx.arc(x,bottom,0.6*nodeRadius,0,Math.PI*2);
             ctx.fillStyle="white";
             ctx.fill();
         }
@@ -52,7 +52,7 @@ class Visualizer{
 
             
             ctx.beginPath();
-            ctx.arc(x,top,nodeRadius,0,Math.PI*2);
+            ctx.arc(x,top,0.6*nodeRadius,0,Math.PI*2);
             ctx.fillStyle="white";
             ctx.fill();
 
