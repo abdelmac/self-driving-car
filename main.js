@@ -2,7 +2,6 @@ const carCanvas=document.getElementById("carCanvas");
 carCanvas.width=200;
 const networkCanvas=document.getElementById("networkCanvas");
 networkCanvas.width=300;
-
 const carCtx = carCanvas.getContext("2d");
 const networkCtx = networkCanvas.getContext("2d");
 
@@ -33,6 +32,8 @@ function animate(){
     car.draw(carCtx,"blue");
 
     carCtx.restore();
+
+    Vizualizer.drawNetwork(networkCtx,car.brain);
 
     requestAnimationFrame(animate);
 }
