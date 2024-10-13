@@ -92,7 +92,7 @@ class Visualizer{
 
 
 
-            ctx(outputLabels[i]){
+            if(outputLabels[i]){
                 ctx.beginPath();
                 ctx.textAlign="center";
                 ctx.textBaseline="middle";
@@ -103,9 +103,7 @@ class Visualizer{
                 ctx.lineWidth=0.5;
                 ctx.strokeText(outputLabels[i],x,top);
             }
-        }
-
-        
+        }  
     }
 
     static #getNodeX(nodes,index,left,right){
