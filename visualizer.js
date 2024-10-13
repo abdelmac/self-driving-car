@@ -16,7 +16,7 @@ class Visualizer{
         const right=left+width;
         const bottom=top+height;
 
-        const {inputs,outputs,weights}=level;
+        const {inputs,outputs,weights,biases}=level;
         
         for(let i=0;i<inputs.length;i++){
             for(let j=0;j<outputs.length;j++){
@@ -59,6 +59,13 @@ class Visualizer{
             ctx.arc(x,top,nodeRadius,0,Math.PI*2);
             ctx.fillStyle="white";
             ctx.fill();
+
+
+            ctx.beginPath();
+            ctx.lineWidth=2;
+            ctx.arc(x,top,nodeRadius,0,Math.PI*2);
+            ctx.strokeStyle=
+            ctx.stroke();
         }
 
         
