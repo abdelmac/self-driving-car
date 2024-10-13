@@ -43,8 +43,12 @@ class Visualizer{
 
             
             ctx.beginPath();
+            ctx.arc(x,bottom,nodeRadius,0,Math.PI*2);
+            ctx.fillStyle="black";
+            ctx.fill();
+            ctx.beginPath();
             ctx.arc(x,bottom,0.6*nodeRadius,0,Math.PI*2);
-            ctx.fillStyle="white";
+            ctx.fillStyle=getRGBA(inputs[i]);
             ctx.fill();
         }
         for(let i=0;i<outputs.length;i++){
@@ -52,16 +56,23 @@ class Visualizer{
 
             
             ctx.beginPath();
+            ctx.arc(x,top,nodeRadius,0,Math.PI*2);
+            ctx.fillStyle="black";
+            ctx.fill();
+
+            ctx.beginPath();
             ctx.arc(x,top,0.6*nodeRadius,0,Math.PI*2);
-            ctx.fillStyle="white";
+            ctx.fillStyle=getRGBA(outputs[i]);
             ctx.fill();
 
 
             ctx.beginPath();
             ctx.lineWidth=2;
-            ctx.arc(x,top,nodeRadius,0,Math.PI*2);
+            ctx.arc(x,top,0.8*nodeRadius,0,Math.PI*2);
             ctx.strokeStyle=getRGBA(biases[i]);
+            ctx.setLineDash([3,3]);
             ctx.stroke();
+            ctx.setLineDash([]);
         }
 
         
